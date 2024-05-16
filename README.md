@@ -1,0 +1,2 @@
+# PyCraze
+Tiny Python Thrills
