@@ -17,8 +17,8 @@ def CaesarCipherEncrypt(PlainText,key):
     return CipherText
 
 
-def CaesarCipherDecrypt(PlainText,key):
-    return CaesarCipherEncrypt(PlainText=PlainText,key=-key)
+def CaesarCipherDecrypt(CipherText,key):
+    return CaesarCipherEncrypt(PlainText=CipherText,key=-key)
     
                     
                         
