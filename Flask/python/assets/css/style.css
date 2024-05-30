@@ -229,6 +229,94 @@ footer {
     text-decoration: none;
 }
 
+.footer-links a, .social-media a img {
+    height: 30px;
+}
 .contact-info p {
     margin: 5px 0;
+}
+
+
+
+.recipes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.recipe-card {
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    margin-bottom: 10px;
+    width: -webkit-fill-available;
+}
+
+.recipe-card:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.recipe-header {
+    background-color: #fa6d6d;
+    color: #fff;
+    padding: 10px 15px;
+    cursor: pointer;
+}
+
+.recipe-header h2 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.recipe-toggle {
+    display: none;
+}
+
+.recipe-content {
+    display: none;
+    padding: 15px;
+}
+
+.recipe-toggle:checked + .recipe-header + .recipe-content {
+    display: block;
+}
+
+.recipe-content img {
+    width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 10px;
+}
+
+.recipe-content .recipe-details {
+    display: flex;
+}
+
+.recipe-content .recipe-meta {
+    margin-left: 20px;
+}
+
+.recipe-content .recipe-meta p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.recipe-content h3 {
+    font-size: 16px;
+    color: #007bff;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.recipe-content ul, .recipe-content ol {
+    padding-left: 20px;
+}
+
+.recipe-content ul li, .recipe-content ol li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.6;
 }

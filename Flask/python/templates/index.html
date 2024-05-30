@@ -4,7 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipe Website</title>
-    <link rel="stylesheet" href="./assets/css/style.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+    <script src="{{ url_for('static', filename='js/scripts.js') }}" defer></script>
 </head>
 <body>
     <!-- Header -->
@@ -44,7 +45,50 @@
             <a href="#" class="btn">Get Started</a>
         </div>
     </section>
-    
+
+    <!-- Fetched recipies -->
+    <section class="full-recipes">
+        <div class="container">
+            <h1>Recipes</h1>
+            <div class="recipes-list">
+                {% for recipe in recipes %}
+                    <div class="recipe-card">
+                        <div class="recipe-header">
+                            <h2>{{ recipe.title }}</h2>
+                        </div>
+                        <div class="recipe-content">
+                            <div class="recipe-details">
+                                <div class="recipe-image">
+                                    <img src="{{ recipe.image_url }}" alt="{{ recipe.title }}">
+                                </div>
+                                <div class="recipe-meta">
+                                    <p><strong>Prep Time:</strong> {{ recipe.prep_time }}</p>
+                                    <p><strong>Cook Time:</strong> {{ recipe.cook_time }}</p>
+                                    <p><strong>Servings:</strong> {{ recipe.servings }}</p>
+                                </div>
+                            </div>
+                            <h3>Ingredients:</h3>
+                            <ul>
+                                {% for ingredient in recipe.ingredients %}
+                                    <li>{{ ingredient }}</li>
+                                {% endfor %}
+                            </ul>
+                            <h3>Instructions:</h3>
+                            <ol>
+                                {% for instruction in recipe.instructions %}
+                                    {{ instruction }}
+                                {% endfor %}
+                            </ol>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+
+
+
+
     <!-- Featured Recipes -->
     <section class="featured-recipes">
         <div class="container">
@@ -172,9 +216,9 @@
                 <a href="#">Terms of Service</a>
             </div>
             <div class="social-media">
-                <a href="#"><img src="icon-instagram.png" alt="Instagram"></a>
-                <a href="#"><img src="icon-pinterest.png" alt="Pinterest"></a>
-                <a href="#"><img src="icon-facebook.png" alt="Facebook"></a>
+                <a href="#"><img src="../assets/images/social-media.png" alt="Instagram"></a>
+                <a href="#"><img src="../assets/images/social-media.png" alt="Pinterest"></a>
+                <a href="#"><img src="../assets/images/social-media.png" alt="Facebook"></a>
             </div>
             <div class="contact-info">
                 <p>Email: contact@recipesite.com</p>
