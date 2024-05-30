@@ -1,0 +1,234 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Container */
+.container1 {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+}
+
+.container {
+    width: 60%;
+    margin: 0 auto;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px 0;
+}
+
+/* Header */
+header {
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    padding: 10px 0;
+}
+
+.header-left, .header-right {
+    display: flex;
+    align-items: center;
+}
+
+.logo a {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+    margin-right: 30px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff6347;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-right: 20px;
+}
+
+.search-bar input {
+    padding: 10px;
+    border: none;
+    outline: none;
+    width: 200px;
+}
+
+.search-bar button {
+    padding: 10px;
+    border: none;
+    background: #ff6347;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.search-bar button:hover {
+    background: #e5533d;
+}
+
+.user-profile a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    transition: color 0.3s ease;
+}
+
+.user-profile a:hover {
+    color: #ff6347;
+}
+
+/* Hero Section */
+.hero {
+    background: url('hero.jpg') no-repeat center center/cover;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.hero-content p {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.hero-content .btn {
+    padding: 10px 20px;
+    background: #ff6347;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+/* Section Styles */
+section {
+    padding: 40px 0;
+}
+
+section h2 {
+    font-size: 32px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.recipe-cards, .category-cards, .recipe-list, .recipe-carousel, .user-recipe-cards, .blog-post-previews {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.recipe-card, .category-card, .recipe-item, .user-recipe-card, .blog-post-preview {
+    width: 30%;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.recipe-card img, .category-card img, .recipe-item img, .user-recipe-card img, .blog-post-preview img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.recipe-card h3, .category-card h3, .recipe-item h3, .user-recipe-card h3, .blog-post-preview h3 {
+    margin: 10px 0;
+    font-size: 20px;
+}
+
+.recipe-card p, .recipe-item p, .user-recipe-card p, .blog-post-preview p {
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.recipe-card .rating, .recipe-carousel .rating {
+    margin: 10px 0;
+    color: #ff6347;
+}
+
+.newsletter-signup {
+    background: #f9f9f9;
+    text-align: center;
+    padding: 40px 0;
+}
+
+.newsletter-signup form {
+    display: flex;
+    justify-content: center;
+}
+
+.newsletter-signup input {
+    padding: 10px;
+    width: 300px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+}
+
+.newsletter-signup button {
+    padding: 10px 20px;
+    background: #ff6347;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+/* Footer */
+footer {
+    background: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-links, .social-media {
+    margin-bottom: 20px;
+}
+
+.footer-links a, .social-media a {
+    color: #fff;
+    margin-right: 20px;
+    text-decoration: none;
+}
+
+.contact-info p {
+    margin: 5px 0;
+}
