@@ -4,16 +4,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daily Quote</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='style.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     <script src="{{ url_for('static', filename='scripts.js') }}" defer></script>
 </head>
 <body>
     <div class="terminal" id="terminal">
         <h1>❝ Quote of the Day ❞</h1>
-        <!-- <div id="output"></div> -->
-        <p>{{quote}}</p>
-      </div>
-      
-    
+        <br>
+        <div id="quote" style="display: none;">{{quote}}</div>
+        <div id="quote-container"></div>
+    </div>
 </body>
 </html>

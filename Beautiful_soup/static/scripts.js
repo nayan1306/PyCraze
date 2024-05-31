@@ -1,49 +1,35 @@
-function writeToTerminal(text, type) {
-    const terminalOutput = document.getElementById('output');
-    if (type === 'command') {
-      terminalOutput.innerHTML += `<p class="command">${text}</p>`;
-    } else {
-      terminalOutput.innerHTML += `<p><span class="typing-animation">${text}</span></p>`;
+document.addEventListener('DOMContentLoaded', (event) => {
+    const quoteElement = document.getElementById('quote');
+    const quoteContainer = document.getElementById('quote-container');
+    const quoteText = quoteElement.innerText.trim();
+    const numberOfParts = 10;
+
+    // Function to split the text into approximately equal parts by word boundaries
+    function splitTextIntoParts(text, parts) {
+        const words = text.split(' ');
+        const partLength = Math.ceil(words.length / parts);
+        const result = [];
+        for (let i = 0; i < words.length; i += partLength) {
+            result.push(words.slice(i, i + partLength).join(' '));
+        }
+        return result;
     }
-    terminalOutput.scrollTop = terminalOutput.scrollHeight;
-  }
 
-  setTimeout(() => {
-    writeToTerminal("<span>{{quote}}</span>", 'command');
-  }, 0);
+    // Function to write part of the quote to the terminal
+    function writeQuotePart(part) {
+        const div = document.createElement('div');
+        div.classList.add('typing-animation');
+        div.innerText = part;
+        quoteContainer.appendChild(div);
+    }
 
-  setTimeout(() => {
-    writeToTerminal("<span>Terminal: Welcome, theprobablyharsh! List your skills.</span>", 'conversation');
-  }, 1000);
+    // Split the quote into parts by word boundaries
+    const quoteParts = splitTextIntoParts(quoteText, numberOfParts);
 
-  setTimeout(() => {
-    writeToTerminal("<span>theprobablyharsh@terminal:~$ echo 'Data Science, ML, MLOps, SDLC, SQL, React, UX, Interaction Design, Figma'</span>", 'command');
-  }, 2500);
-
-  setTimeout(() => {
-    writeToTerminal("<span>Terminal: Impressive skill set! What about your personality traits?</span>", 'conversation');
-  }, 3500);
-
-  setTimeout(() => {
-    writeToTerminal("<span>theprobablyharsh@terminal:~$ echo 'INTP-A, analytical, curious'</span>", 'command');
-  }, 5500);
-
-  setTimeout(() => {
-    writeToTerminal("<span>Terminal: Analytical mind, got it. What languages do you speak?</span>", 'conversation');
-  }, 6500);
-
-  setTimeout(() => {
-    writeToTerminal("<span>theprobablyharsh@terminal:~$ echo 'English, Hindi (fluent), Gujarati (native), Telugu, French, Spanish (familiar), Sanskrit, Korean, Italian (learning)'</span>", 'command');
-  }, 8500);
-
-  setTimeout(() => {
-    writeToTerminal("<span>Terminal: Multilingual, nice. Your mission?</span>", 'conversation');
-  }, 9500);
-
-  setTimeout(() => {
-    writeToTerminal("<span>theprobablyharsh@terminal:~$ echo 'Navigate data, tech, and design with passion for innovation and learning.'</span>", 'command');
-  }, 11500);
-
-  setTimeout(() => {
-    writeToTerminal("<span>Terminal: Keep exploring and innovating, theprobablyharsh!</span>", 'conversation');
-  }, 13000);
+    // Display each part at 1-second intervals
+    quoteParts.forEach((part, index) => {
+        setTimeout(() => {
+            writeQuotePart(part);
+        }, index * 1000);
+    });
+});
